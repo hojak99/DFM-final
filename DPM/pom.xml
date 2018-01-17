@@ -113,12 +113,12 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.2.2</version>
+			<version>3.2.7</version>
 		</dependency>		
 		<dependency>
 	    	<groupId>org.mybatis</groupId>
 	    	<artifactId>mybatis-spring</artifactId>
-	    	<version>1.1.0</version>
+	    	<version>1.2.2</version>
 		</dependency>
 		
 		<!-- jDBC -->
@@ -158,6 +158,18 @@
 			<artifactId>lombok</artifactId>
 			<version>1.16.18</version>
 			<scope>provided</scope>
+		</dependency>
+	
+		<!-- redis -->
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-redis</artifactId>
+		    <version>1.1.0.RELEASE</version>
+		</dependency>
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>2.1.0</version>
 		</dependency>
 	
 		<!-- Test -->

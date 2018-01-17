@@ -11,6 +11,7 @@ import com.dpm.app.dto.Test;
 @Repository
 public class TestDao {
 	private final String NAMESPACE = "com.dpm.app.mapper.TestMapper.";
+	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
