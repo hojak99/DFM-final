@@ -1,4 +1,4 @@
-package com.dpm.app.controllers;
+package com.dpm.app.calendar.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dpm.app.dto.Test;
-import com.dpm.app.services.TestService;
+import com.dpm.app.calendar.dto.Test;
+import com.dpm.app.calendar.services.TestService;
 
 @Controller
 @RequestMapping("/test")
@@ -22,6 +22,7 @@ public class TestController {
 	public @ResponseBody Test getTest(@PathVariable int id) {
 		System.out.println("Test controller");
 		logger.info("TESTController IN==>" + id);
+		
 		return testService.getTest(id);
 	}
 }

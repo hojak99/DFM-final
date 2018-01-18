@@ -1,4 +1,4 @@
-package com.dpm.app.dao;
+package com.dpm.app.calendar.dao;
 
 import javax.naming.NameParser;
 
@@ -6,7 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.dpm.app.dto.Test;
+import com.dpm.app.calendar.dto.Test;
+
 
 @Repository
 public class TestDao {

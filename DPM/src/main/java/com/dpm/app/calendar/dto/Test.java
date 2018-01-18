@@ -1,4 +1,4 @@
-package com.dpm.app.dto;
+package com.dpm.app.calendar.dto;
 
 import lombok.Data;
 
