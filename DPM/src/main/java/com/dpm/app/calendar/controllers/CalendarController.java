@@ -24,8 +24,6 @@ public class CalendarController {
 	@RequestMapping(value="/calendar", method=RequestMethod.GET)
 	public String calendarHome(HttpServletRequest request, HttpServletResponse response) {
 		
-		
-		
 		return "HOME";
 	}
 }
