@@ -7,7 +7,7 @@ create table user (
 
 create table moneybook (
 	id int(11) unsigned NOT NULL auto_increment,
-	date timestamp,
+	date date,
     category int(3),
     content text,
     isCash TINYINT(1),
@@ -16,7 +16,7 @@ create table moneybook (
 );
 
 insert into user values('jinhyeon', '1234');
-insert into moneybook (date, category, content, isCash, isExpense) values (now(), 2, '풋살 할 때', 1, 1);
+insert into moneybook (date, category, content, isCash, isExpense) values (date(now())
+, 2, '풋살 할 때', 1, 1);
 
-select * from user;
-select * from moneybook;
+select * from moneybook where date = "2018-01-18";
