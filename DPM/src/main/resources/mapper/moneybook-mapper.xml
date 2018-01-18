@@ -8,4 +8,8 @@
 	<select id="getMoneyBook" resultType="com.dpm.app.moneybook.dto.MoneyBookDTO">
 		select * from moneybook where date = "{date}" 
 	</select>
+	
+	<select id="deleteAllMoneyBooks">
+		delete from moneybook;
+	</select>
 </mapper>

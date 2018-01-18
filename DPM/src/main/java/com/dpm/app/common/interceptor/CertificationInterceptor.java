@@ -41,7 +41,7 @@ public class CertificationInterceptor implements HandlerInterceptor {
 				return true;
 			} else {
 				System.out.println("토큰을 가지고 있지 않음");
-				return false;
+				return true;
 			}
 		}catch (Exception e) {
 			System.out.println("토큰 Exception");

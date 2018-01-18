@@ -23,4 +23,8 @@ public class MoneyBookDao {
 	public MoneyBookDTO getMoneyBook(Date date) {
 		return sqlSession.selectOne(NAMESPACE + "getMoneyBook", date);
 	}
+	
+	public void deleteAllMoneyBooks() {
+		sqlSession.delete(NAMESPACE + "deleteAllMoneyBooks");
+	}
 }

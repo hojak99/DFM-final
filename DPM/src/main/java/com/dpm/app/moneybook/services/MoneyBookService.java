@@ -9,4 +9,5 @@ import com.dpm.app.moneybook.dto.MoneyBookDTO;
 public interface MoneyBookService {
 	List<MoneyBookDTO> getAllMoneyBooks();
 	MoneyBookDTO getMoneyBook(Date date);
+	void deleteAllMoneyBooks();
 }

@@ -25,4 +25,9 @@ public class MoneyBookServiceImpl implements MoneyBookService {
 	public MoneyBookDTO getMoneyBook(Date date) {
 		return moneyBookDao.getMoneyBook(date);
 	}
+
+	@Override
+	public void deleteAllMoneyBooks() {
+		moneyBookDao.deleteAllMoneyBooks();
+	}
 }

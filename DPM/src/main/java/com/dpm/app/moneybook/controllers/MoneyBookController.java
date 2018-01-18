@@ -30,10 +30,16 @@ public class MoneyBookController {
 		return moneyBookService.getAllMoneyBooks();
 	}
 	
-//	@RequestMapping(value = "/{date}", method = RequestMethod.GET)
-//	public @ResponseBody MoneyBookDTO getMoneyBook(@RequestParam @DateTimeFormat(pattern="yyyy-MM-DD") Date date) {
+//	@RequestMapping(value = "", method = RequestMethod.GET)
+//	public @ResponseBody MoneyBookDTO getMoneyBook(@RequestParam("date")Date date) {
 //		logger.info("MONEYBOOK CONTROLLER IN=>>");
 //		
 //		return moneyBookService.getMoneyBook(date);
 //	}
+	
+	@RequestMapping(value = "", method = RequestMethod.DELETE)
+	public void deleteAllMoneyBooks() {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		moneyBookService.deleteAllMoneyBooks();
+	}
 }
