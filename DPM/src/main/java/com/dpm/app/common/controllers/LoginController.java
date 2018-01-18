@@ -17,7 +17,7 @@ public class LoginController {
 	
 	@ResponseBody
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param) throws JsonProcessingException {
+	public String login(HttpServletRequest request, HttpServletResponse response) throws JsonProcessingException {
 		
 		return "";
 	}
