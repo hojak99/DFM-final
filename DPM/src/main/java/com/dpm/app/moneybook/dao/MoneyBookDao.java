@@ -25,6 +25,10 @@ public class MoneyBookDao {
 		return sqlSession.selectOne(NAMESPACE + "getMoneyBook", date);
 	}
 	
+	public void writeMoneyBook(MoneyBookDTO moneyBook) {
+		sqlSession.insert(NAMESPACE + "writeMoneyBook", moneyBook);
+	}
+	
 	public void deleteAllMoneyBooks() {
 		sqlSession.delete(NAMESPACE + "deleteAllMoneyBooks");
 	}

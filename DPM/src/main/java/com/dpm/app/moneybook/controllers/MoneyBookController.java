@@ -39,6 +39,13 @@ public class MoneyBookController {
 //		return moneyBookService.getMoneyBook(date);
 //	}
 	
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	public void writeMoneyBook(@RequestBody MoneyBookDTO moneyBook) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		System.out.println(moneyBook);
+		moneyBookService.writeMoneyBook(moneyBook);
+	}
+	
 	@RequestMapping(value = "", method = RequestMethod.DELETE)
 	public void deleteAllMoneyBooks() {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
