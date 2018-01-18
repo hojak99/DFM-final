@@ -1,11 +1,11 @@
-package com.dpm.app.common.dto;
+package com.dpm.app.account.dto;
 
 /**
  * 
  * @author KwonJH
  * 캘린더와 todo 에서 공통으로 사용할 userDTO
  */
-public class UserDTO {
+public class UserDto {
 	
 	private String id;
 	private String password;
