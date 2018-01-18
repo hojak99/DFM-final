@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,5 +43,12 @@ public class MoneyBookController {
 	public void deleteAllMoneyBooks() {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
 		moneyBookService.deleteAllMoneyBooks();
+	}
+
+	@RequestMapping(value ="", method = RequestMethod.PUT)
+	public void modifyMoneyBook(@RequestBody final MoneyBookDTO moneyBook) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		System.out.println(moneyBook);
+		moneyBookService.modifyMoneyBook(moneyBook);
 	}
 }

@@ -10,4 +10,5 @@ public interface MoneyBookService {
 	List<MoneyBookDTO> getAllMoneyBooks();
 	MoneyBookDTO getMoneyBook(Date date);
 	void deleteAllMoneyBooks();
+	void modifyMoneyBook(MoneyBookDTO moneyBook);
 }

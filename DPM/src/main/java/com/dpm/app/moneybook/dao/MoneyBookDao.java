@@ -1,6 +1,7 @@
 package com.dpm.app.moneybook.dao;
 
 import java.sql.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -26,5 +27,9 @@ public class MoneyBookDao {
 	
 	public void deleteAllMoneyBooks() {
 		sqlSession.delete(NAMESPACE + "deleteAllMoneyBooks");
+	}
+	
+	public void modifyMoneyBook(MoneyBookDTO moneyBook) {
+		sqlSession.update(NAMESPACE + "modifyMoneyBook", moneyBook);
 	}
 }

@@ -9,7 +9,18 @@
 		select * from moneybook where date = "{date}" 
 	</select>
 	
-	<select id="deleteAllMoneyBooks">
+	<delete id="deleteAllMoneyBooks">
 		delete from moneybook;
-	</select>
+	</delete>
+	
+	<update id="modifyMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
+		update moneybook set
+			id = #{id},
+			date = #{date},
+			category = #{category}, 
+			content = #{content},
+			isCash = #{isCash},
+			isExpense = #{isExpense}
+		where id = #{id};	
+	</update>
 </mapper>
