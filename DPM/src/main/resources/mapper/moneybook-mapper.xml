@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dpm.app.mapper.MoneyBookMapper">
+	<select id="getAllMoneyBooks" resultType="com.dpm.app.moneybook.dto.MoneyBookDTO">
+		select * from moneybook;
+	</select>
+	
+	<select id="getMoneyBook" resultType="com.dpm.app.moneybook.dto.MoneyBookDTO">
+		select * from moneybook where date = "{date}" 
+	</select>
+	
+	<insert id="writeMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
+		insert into moneybook (date, category, content, isCash, isExpense) 
+		values(#{date}, #{category}, #{content}, #{isCash}, #{isExpense});
+	</insert>
+	
+	<delete id="deleteAllMoneyBooks">
+		delete from moneybook;
+	</delete>
+	
+	<update id="modifyMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
+		update moneybook set
+			id = #{id},
+			date = #{date},
+			category = #{category}, 
+			content = #{content},
+			isCash = #{isCash},
+			isExpense = #{isExpense}
+		where id = #{id};	
+	</update>
+</mapper>

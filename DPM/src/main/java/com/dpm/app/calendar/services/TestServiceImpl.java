@@ -1,11 +1,11 @@
-package com.dpm.app.services;
+package com.dpm.app.calendar.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dpm.app.dao.TestDao;
-import com.dpm.app.dto.Test;
+import com.dpm.app.calendar.dao.TestDao;
+import com.dpm.app.calendar.dto.Test;
 
 @Service
 @Transactional
