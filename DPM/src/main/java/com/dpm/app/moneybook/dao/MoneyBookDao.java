@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Repository
 public class MoneyBookDao {
 	private final String NAMESPACE = "com.dpm.app.mapper.MoneyBookMapper.";
+	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	

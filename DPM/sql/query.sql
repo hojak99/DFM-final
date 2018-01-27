@@ -11,21 +11,34 @@ create table token (
 );
 
 
+drop table diary;
 create table diary (
-	id int not null auto_increment primary key,
+	id int auto_increment primary key,
     title varchar(50) not null,
     content varchar(200) not null,
     create_date datetime not null,
     user_id varchar(50) not null
 );
 
+drop table todo;
 create table todo(
-	id int not null auto_increment primary key,
+	id int auto_increment primary key,
     tag varchar(100),
     finish int not null,
     title varchar(50) not null,
     create_date datetime not null,
     user_id varchar(50) not null
+);
+
+drop table schedule;
+create table schedule (
+	id int auto_increment primary key,
+    user_id varchar(50) not null,
+    promise_time int not null,
+    title varchar(50) not null,
+    location varchar(50),
+    finish int not null,
+    create_date datetime not null
 );
 
 create table moneybook (
@@ -38,18 +51,6 @@ create table moneybook (
 	PRIMARY KEY(id)
 );
 
-create table schedule (
-	id varchar(50) primary key,
-    user_id varchar(50),
-    promise_time int not null,
-    title varchar(50) not null,
-    location varchar(50),
-    finish int not null,
-    create_date datetime default current_timestamp
-);
+select * from diary;
+insert into diary (title, content, create_date, user_id) values ("타이틀", "내용", current_date(), "test1");
 
-insert into user values('jinhyeon', '1234');
-insert into moneybook (date, category, content, isCash, isExpense) values (date(now())
-, 2, '풋살 할 때', 1, 1);
-
-select * from moneybook where date = "2018-01-18";

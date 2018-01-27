@@ -28,7 +28,6 @@ public class CertificationInterceptor implements HandlerInterceptor {
 		
 	}
 
-	// Å¬¶óÀÌ¾ğÆ®°¡ ¼­¹ö¿¡°Ô ¿äÃ»ÇÒ ¶§¸¶´Ù °Ë»ç
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -37,14 +36,14 @@ public class CertificationInterceptor implements HandlerInterceptor {
 		
 		try{
 			if(!ObjectUtils.isEmpty(token)){
-				System.out.println("ÅäÅ«À» °¡Áö°í ÀÖÀ½ : " + token.getTokenKey());
+				System.out.println("ì„¸ì…˜ìˆìŒ: " + token.getTokenKey());
 				return true;
 			} else {
-				System.out.println("ÅäÅ«À» °¡Áö°í ÀÖÁö ¾ÊÀ½");
+				System.out.println("ì„¸ì…˜ì—†ìŒ");
 				return true;
 			}
 		}catch (Exception e) {
-			System.out.println("ÅäÅ« Exception");
+			System.out.println("ì„¸ì…˜ Exception");
 			return false;
 		}
 	}
