@@ -35,6 +35,11 @@ public class MoneyBookServiceImpl implements MoneyBookService {
 	public void deleteAllMoneyBooks() {
 		moneyBookDao.deleteAllMoneyBooks();
 	}
+	
+	@Override
+	public void deleteMoneyBook(int id) {
+		moneyBookDao.deleteMoneyBook(id);
+	}
 
 	@Override
 	public void modifyMoneyBook(MoneyBookDTO moneyBook) {

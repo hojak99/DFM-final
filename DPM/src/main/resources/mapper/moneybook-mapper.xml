@@ -18,6 +18,10 @@
 		delete from moneybook;
 	</delete>
 	
+	<delete id="deleteMoneyBook">
+		delete from moneybook where id = #{id};
+	</delete>
+	
 	<update id="modifyMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
 		update moneybook set
 			id = #{id},

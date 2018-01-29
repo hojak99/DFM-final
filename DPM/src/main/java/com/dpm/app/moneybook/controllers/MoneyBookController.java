@@ -51,4 +51,10 @@ public class MoneyBookController {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
 		moneyBookService.deleteAllMoneyBooks();
 	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public void deleteMoneyBook(@PathVariable int id) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		moneyBookService.deleteMoneyBook(id);
+	}
 }
