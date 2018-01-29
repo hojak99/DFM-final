@@ -8,7 +8,7 @@ import com.dpm.app.moneybook.dto.MoneyBookDTO;
 
 public interface MoneyBookService {
 	List<MoneyBookDTO> getAllMoneyBooks();
-	MoneyBookDTO getMoneyBook(Date date);
+	List<MoneyBookDTO> getMoneyBook(String dateString);
 	void writeMoneyBook(MoneyBookDTO moneyBook);
 	void deleteAllMoneyBooks();
 	void modifyMoneyBook(MoneyBookDTO moneyBook);

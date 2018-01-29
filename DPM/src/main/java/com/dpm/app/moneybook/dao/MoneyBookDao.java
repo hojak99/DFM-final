@@ -1,7 +1,5 @@
 package com.dpm.app.moneybook.dao;
 
-import java.sql.Date;
-import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -22,8 +20,8 @@ public class MoneyBookDao {
 		return sqlSession.selectList(NAMESPACE + "getAllMoneyBooks");
 	}
 	
-	public MoneyBookDTO getMoneyBook(Date date) {
-		return sqlSession.selectOne(NAMESPACE + "getMoneyBook", date);
+	public List<MoneyBookDTO> getMoneyBook(String dateString) {
+		return sqlSession.selectList(NAMESPACE + "getMoneyBook", dateString);
 	}
 	
 	public void writeMoneyBook(MoneyBookDTO moneyBook) {

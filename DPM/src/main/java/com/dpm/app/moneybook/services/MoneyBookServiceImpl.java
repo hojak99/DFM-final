@@ -22,8 +22,8 @@ public class MoneyBookServiceImpl implements MoneyBookService {
 	}
 
 	@Override
-	public MoneyBookDTO getMoneyBook(Date date) {
-		return moneyBookDao.getMoneyBook(date);
+	public List<MoneyBookDTO> getMoneyBook(String dateString) {
+		return moneyBookDao.getMoneyBook(dateString);
 	}
 
 	@Override

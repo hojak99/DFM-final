@@ -6,7 +6,7 @@
 	</select>
 	
 	<select id="getMoneyBook" resultType="com.dpm.app.moneybook.dto.MoneyBookDTO">
-		select * from moneybook where date = "{date}" 
+		select * from moneybook where date = #{dateString}; 
 	</select>
 	
 	<insert id="writeMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
