@@ -36,6 +36,10 @@ public class MoneyBookDao {
 		sqlSession.delete(NAMESPACE + "deleteMoneyBook", id);
 	}
 	
+	public void deleteMoneyBookByDate(String dateString) {
+		sqlSession.delete(NAMESPACE + "deleteMoneyBookByDate", dateString);
+	}
+	
 	public void modifyMoneyBook(MoneyBookDTO moneyBook) {
 		sqlSession.update(NAMESPACE + "modifyMoneyBook", moneyBook);
 	}

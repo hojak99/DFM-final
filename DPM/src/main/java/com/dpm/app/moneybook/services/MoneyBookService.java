@@ -11,5 +11,6 @@ public interface MoneyBookService {
 	void writeMoneyBook(MoneyBookDTO moneyBook);
 	void deleteAllMoneyBooks();
 	void deleteMoneyBook(int id);
+	void deleteMoneyBookByDate(String dateString);
 	void modifyMoneyBook(MoneyBookDTO moneyBook);
 }

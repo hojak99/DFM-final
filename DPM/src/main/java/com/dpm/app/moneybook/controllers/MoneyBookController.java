@@ -57,4 +57,11 @@ public class MoneyBookController {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
 		moneyBookService.deleteMoneyBook(id);
 	}
+	
+	@RequestMapping(value = "/date/{dateString}", method = RequestMethod.DELETE)
+	public void deleteMoneyBookByDate(
+			@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) String dateString) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		moneyBookService.deleteMoneyBookByDate(dateString);
+	}	
 }

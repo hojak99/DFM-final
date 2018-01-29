@@ -22,6 +22,10 @@
 		delete from moneybook where id = #{id};
 	</delete>
 	
+	<delete id="deleteMoneyBookByDate">
+		delete from moneybook where date = #{dateString};
+	</delete>
+	
 	<update id="modifyMoneyBook" parameterType="com.dpm.app.moneybook.dto.MoneyBookDTO">
 		update moneybook set
 			id = #{id},

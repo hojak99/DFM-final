@@ -40,6 +40,11 @@ public class MoneyBookServiceImpl implements MoneyBookService {
 	public void deleteMoneyBook(int id) {
 		moneyBookDao.deleteMoneyBook(id);
 	}
+	
+	@Override
+	public void deleteMoneyBookByDate(String dateString) {
+		moneyBookDao.deleteMoneyBookByDate(dateString);
+	}
 
 	@Override
 	public void modifyMoneyBook(MoneyBookDTO moneyBook) {
