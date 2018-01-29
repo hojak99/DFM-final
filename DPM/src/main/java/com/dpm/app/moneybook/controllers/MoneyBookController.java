@@ -48,6 +48,12 @@ public class MoneyBookController {
 		System.out.println(moneyBook);
 		moneyBookService.modifyMoneyBook(moneyBook);
 	}
+	
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	public void writeMoneyBook(@RequestBody final MoneyBookDTO moneyBook) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		moneyBookService.writeMoneyBook(moneyBook);
+	}
 
 	@RequestMapping(value = "", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.OK)
