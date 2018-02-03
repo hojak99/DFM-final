@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="todoDao">
+	
+	<select id="getAllTodo" parameterType="com.dpm.app.todo.dto.TodoSearchDto" resultType="com.dpm.app.todo.dto.TodoDto">
+		SELECT * FROM todo WHERE user_id = #{user_id};
+	</select>
+	
+	<select id="getTodo" parameterType="com.dpm.app.todo.dto.TodoSearchDto" resultType="com.dpm.app.todo.dto.TodoDto">
+		SELECT * FROM todo WHERE id = #{user_id} AND create_date = #{date}
+	</select>
+	
+	<insert id="createTodo" parameterType="com.dpm.app.todo.dto.TodoDto">
+		INSERT INTO todo (title, create_date, user_id, tag, finish) VALUES (#{title}, #{create_date}, #{user_id}, #{tag}, #{finish);
+	</insert>
+	
+	<delete id="deleteTodo" parameterType="com.dpm.app.todo.dto.TodoDto">
+		DELETE FROM todo WHERE id = #{id};
+	</delete>
+	
+	<update id="updateTodo" parameterType="com.dpm.app.todo.dto.TodoDto">
+		UPDATE todo SET title = #{title}, create_date = #{create_date}, user_id=#{user_id}, tag=#{tag}, finish=#{finish} WHERE id= #{id};
+	</update>
+	
+</mapper>

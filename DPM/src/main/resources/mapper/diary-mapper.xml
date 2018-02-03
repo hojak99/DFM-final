@@ -7,7 +7,19 @@
 	</select>
 	
 	<select id="getDiary" parameterType="com.dpm.app.diary.dto.DiarySearchDto" resultType="com.dpm.app.diary.dto.DiaryDto">
-		SELECT * FROM diary WHERE id = #{id} AND create_date = #{date}
+		SELECT * FROM diary WHERE id = #{user_id} AND create_date = #{date}
 	</select>
+	
+	<insert id="createDiary" parameterType="com.dpm.app.diary.dto.DiaryDto">
+		INSERT INTO diary (title, content, create_date, user_id) VALUES (#{title}, #{content}, #{create_date}, #{user_id});
+	</insert>
+	
+	<delete id="deleteDiary" parameterType="com.dpm.app.diary.dto.DiaryDto">
+		DELETE FROM diary WHERE id = #{id};
+	</delete>
+	
+	<update id="updateDiary" parameterType="com.dpm.app.diary.dto.DiaryDto">
+		UPDATE diary SET title = #{title}, content=#{content}, create_date = #{create_date}, user_id=#{user_id} WHERE id= #{id};
+	</update>
 	
 </mapper>
