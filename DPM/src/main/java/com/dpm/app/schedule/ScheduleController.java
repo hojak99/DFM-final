@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.dpm.app.moneybook.dto.MoneyBookDTO;
+
 @Controller
 @RequestMapping("/schedule")
 public class ScheduleController {
@@ -37,9 +39,16 @@ public class ScheduleController {
 		return scheduleService.getSchedulesByDate(dateString);
 	}
 	
+	@RequestMapping(value = "", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.CREATED)
+	public void writeSchedule(@RequestBody final ScheduleDto schedule) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		scheduleService.writeSchedule(schedule);
+	}
+	
 	@RequestMapping(value = "", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.OK)
-	public void modifySchedule(@RequestBody ScheduleDto schedule) {
+	public void modifySchedule(@RequestBody final ScheduleDto schedule) {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
 		scheduleService.modifySchedule(schedule);
 	}

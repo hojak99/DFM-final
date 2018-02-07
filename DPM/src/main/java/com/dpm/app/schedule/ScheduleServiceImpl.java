@@ -27,6 +27,11 @@ public class ScheduleServiceImpl implements ScheduleService {
 	}
 
 	@Override
+	public void writeSchedule(ScheduleDto schedule) {
+		scheduleDao.writeSchedule(schedule);
+	}
+	
+	@Override
 	public void deleteAllSchedules() {
 		scheduleDao.deleteAllSchedules();
 	}

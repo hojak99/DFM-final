@@ -19,6 +19,11 @@
 		where id = #{id};	
 	</update>
 	
+	<insert id="writeSchedule" parameterType="com.dpm.app.schedule.ScheduleDto">
+		insert into schedule (user_id, promise_time, title, location, finish, create_date) 
+		values(#{userId}, #{promiseTime}, #{title}, #{location}, #{finish}, #{createDate});
+	</insert>
+	
 	<delete id="deleteAllSchedules">
 		delete from schedule;
 	</delete>

@@ -19,6 +19,14 @@ public class ScheduleDao {
 	public List<ScheduleDto> getSchedulesByDate(String dateString) {
 		return sqlSession.selectList(NAMESPACE + "getSchedulesByDate", dateString);
 	}
+	
+	public void modifySchedule(ScheduleDto schedule) {
+		sqlSession.update(NAMESPACE + "modifySchedule", schedule);
+	}
+	
+	public void writeSchedule(ScheduleDto schedule) {
+		sqlSession.insert(NAMESPACE + "writeSchedule", schedule);
+	}
 
 	public void deleteAllSchedules() {
 		sqlSession.delete(NAMESPACE + "deleteAllSchedules");
@@ -30,9 +38,5 @@ public class ScheduleDao {
 
 	public void deleteSchedulesByDate(String dateString) {
 		sqlSession.delete(NAMESPACE + "deleteSchedulesByDate", dateString);
-	}
-
-	public void modifySchedule(ScheduleDto schedule) {
-		sqlSession.update(NAMESPACE + "modifySchedule", schedule);
 	}
 }
