@@ -18,7 +18,20 @@ public class ScheduleServiceImpl implements ScheduleService {
 	}
 	@Override
 	public List<ScheduleDto> getSchedulesByDate(String dateString) {
-		// TODO Auto-generated method stub
 		return scheduleDao.getSchedulesByDate(dateString);
+	}
+	@Override
+	public void deleteAllSchedules() {
+		scheduleDao.deleteAllSchedules();
+	}
+
+	@Override
+	public void deleteSchedule(int id) {
+		scheduleDao.deleteSchedule(id);
+	}
+
+	@Override
+	public void deleteSchedulesByDate(String dateString) {
+		scheduleDao.deleteSchedulesByDate(dateString);
 	}
 }

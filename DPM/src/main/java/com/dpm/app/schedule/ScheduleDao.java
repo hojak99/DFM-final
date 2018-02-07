@@ -17,7 +17,18 @@ public class ScheduleDao {
 	}
 
 	public List<ScheduleDto> getSchedulesByDate(String dateString) {
-		// TODO Auto-generated method stub
 		return sqlSession.selectList(NAMESPACE + "getSchedulesByDate", dateString);
+	}
+
+	public void deleteAllSchedules() {
+		sqlSession.delete(NAMESPACE + "deleteAllSchedules");
+	}
+
+	public void deleteSchedule(int id) {
+		sqlSession.delete(NAMESPACE + "deleteSchedule", id);
+	}
+
+	public void deleteSchedulesByDate(String dateString) {
+		sqlSession.delete(NAMESPACE + "deleteSchedulesByDate", dateString);
 	}
 }

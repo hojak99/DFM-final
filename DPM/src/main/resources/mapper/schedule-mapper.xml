@@ -9,4 +9,15 @@
 		select * from schedule where create_date = #{dateString};
 	</select>
 	
+	<delete id="deleteAllSchedules">
+		delete from schedule;
+	</delete>
+	
+	<delete id="deleteSchedule">
+		delete from schedule where id = #{id};
+	</delete>
+	
+	<delete id="deleteSchedulesByDate">
+		delete from schedule where create_date = #{dateString};
+	</delete>
 </mapper>

@@ -35,4 +35,26 @@ public class ScheduleController {
 		logger.info("getSchedules = >>");
 		return scheduleService.getSchedulesByDate(dateString);
 	}
+	
+	@RequestMapping(value = "", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.OK)
+	public void deleteAllSchedules() {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		scheduleService.deleteAllSchedules();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.OK)
+	public void deleteSchedule(@PathVariable int id) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		scheduleService.deleteSchedule(id);
+	}
+	
+	@RequestMapping(value = "/date/{dateString}", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.OK)
+	public void deleteSchedulesByDate(
+			@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) String dateString) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		scheduleService.deleteSchedulesByDate(dateString);
+	}	
 }
