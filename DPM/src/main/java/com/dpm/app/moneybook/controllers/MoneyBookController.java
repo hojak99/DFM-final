@@ -43,7 +43,7 @@ public class MoneyBookController {
 
 	@RequestMapping(value = "", method = RequestMethod.PUT)
 	@ResponseStatus(HttpStatus.OK)
-	public void modifyMoneyBook(@RequestBody final MoneyBookDTO moneyBook) {
+	public void modifyMoneyBook(@RequestBody MoneyBookDTO moneyBook) {
 		logger.info("MONEYBOOK CONTROLLER IN=>>");
 		System.out.println(moneyBook);
 		moneyBookService.modifyMoneyBook(moneyBook);

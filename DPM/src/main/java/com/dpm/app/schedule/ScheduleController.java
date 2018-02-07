@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,6 +35,13 @@ public class ScheduleController {
 			@PathVariable @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) String dateString) {
 		logger.info("getSchedules = >>");
 		return scheduleService.getSchedulesByDate(dateString);
+	}
+	
+	@RequestMapping(value = "", method = RequestMethod.PUT)
+	@ResponseStatus(HttpStatus.OK)
+	public void modifySchedule(@RequestBody ScheduleDto schedule) {
+		logger.info("MONEYBOOK CONTROLLER IN=>>");
+		scheduleService.modifySchedule(schedule);
 	}
 	
 	@RequestMapping(value = "", method = RequestMethod.DELETE)

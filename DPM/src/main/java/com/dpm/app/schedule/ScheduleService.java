@@ -8,4 +8,5 @@ public interface ScheduleService {
 	void deleteAllSchedules();
 	void deleteSchedule(int id);
 	void deleteSchedulesByDate(String dateString);
+	void modifySchedule(ScheduleDto schedule);
 }

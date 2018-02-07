@@ -31,4 +31,8 @@ public class ScheduleDao {
 	public void deleteSchedulesByDate(String dateString) {
 		sqlSession.delete(NAMESPACE + "deleteSchedulesByDate", dateString);
 	}
+
+	public void modifySchedule(ScheduleDto schedule) {
+		sqlSession.update(NAMESPACE + "modifySchedule", schedule);
+	}
 }

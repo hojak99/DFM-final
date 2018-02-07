@@ -9,6 +9,16 @@
 		select * from schedule where create_date = #{dateString};
 	</select>
 	
+	<update id="modifySchedule" parameterType="com.dpm.app.schedule.ScheduleDto">
+		update schedule set
+    		promise_time = #{promiseTime},
+		    title = #{title},
+		    location = #{location},
+		    finish = #{finish}, 
+		    create_date = #{createDate}
+		where id = #{id};	
+	</update>
+	
 	<delete id="deleteAllSchedules">
 		delete from schedule;
 	</delete>

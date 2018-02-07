@@ -20,6 +20,12 @@ public class ScheduleServiceImpl implements ScheduleService {
 	public List<ScheduleDto> getSchedulesByDate(String dateString) {
 		return scheduleDao.getSchedulesByDate(dateString);
 	}
+	
+	@Override
+	public void modifySchedule(ScheduleDto schedule) {
+		scheduleDao.modifySchedule(schedule);
+	}
+
 	@Override
 	public void deleteAllSchedules() {
 		scheduleDao.deleteAllSchedules();
