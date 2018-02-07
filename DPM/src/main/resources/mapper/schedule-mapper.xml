@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dpm.app.mapper.ScheduleMapper">
+	<select id="getAllSchedules" resultType="com.dpm.app.schedule.ScheduleDto">
+		select * from schedule;
+	</select>
+
+	<select id="getSchedulesByDate" resultType="com.dpm.app.schedule.ScheduleDto">
+		select * from schedule where create_date = #{dateString};
+	</select>
+	
+</mapper>
