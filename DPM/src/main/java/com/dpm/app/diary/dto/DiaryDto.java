@@ -6,7 +6,7 @@ public class DiaryDto {
 	private int id;
 	private String title;
 	private String content;
-	private Date create_date;
+	private String create_date;
 	private String user_id;
 
 	public int getId() {
@@ -33,11 +33,11 @@ public class DiaryDto {
 		this.content = content;
 	}
 
-	public Date getCreate_date() {
+	public String getCreate_date() {
 		return create_date;
 	}
 
-	public void setCreate_date(Date create_date) {
+	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
 

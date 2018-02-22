@@ -8,7 +8,7 @@ public class TodoDto {
 	private int finish;
 	private String title;
 	private String user_id;
-	private Date create_date;
+	private String create_date;
 
 	public int getId() {
 		return id;
@@ -50,11 +50,11 @@ public class TodoDto {
 		this.user_id = user_id;
 	}
 
-	public Date getCreate_date() {
+	public String getCreate_date() {
 		return create_date;
 	}
 
-	public void setCreate_date(Date create_date) {
+	public void setCreate_date(String create_date) {
 		this.create_date = create_date;
 	}
 

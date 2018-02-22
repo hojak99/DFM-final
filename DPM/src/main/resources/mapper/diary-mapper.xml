@@ -7,7 +7,7 @@
 	</select>
 	
 	<select id="getDiary" parameterType="com.dpm.app.diary.dto.DiarySearchDto" resultType="com.dpm.app.diary.dto.DiaryDto">
-		SELECT * FROM diary WHERE id = #{user_id} AND create_date = #{date}
+		SELECT * FROM diary WHERE user_id = #{user_id} AND create_date BETWEEN #{create_date_start} AND #{create_date_end};
 	</select>
 	
 	<insert id="createDiary" parameterType="com.dpm.app.diary.dto.DiaryDto">

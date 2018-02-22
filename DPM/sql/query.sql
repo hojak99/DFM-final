@@ -16,7 +16,7 @@ create table diary (
 	id int auto_increment primary key,
     title varchar(50) not null,
     content varchar(200) not null,
-    create_date datetime not null,
+    create_date varchar(50) not null,
     user_id varchar(50) not null
 );
 
@@ -26,7 +26,7 @@ create table todo(
     tag varchar(100),
     finish int not null,
     title varchar(50) not null,
-    create_date datetime not null,
+    create_date varchar(50) not null,
     user_id varchar(50) not null
 );
 
