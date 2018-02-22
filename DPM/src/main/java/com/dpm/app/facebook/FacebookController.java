@@ -16,6 +16,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/facebook")
@@ -33,13 +34,15 @@ public class FacebookController {
 	}
 
 	@RequestMapping(value = "/facebookAccessToken")
-	public void getFacebookSignin(String code, HttpSession session, String state) throws Exception {
+	public @ResponseBody JSONObject getFacebookSignin(String code, HttpSession session, String state) throws Exception {
 		System.out.println("code : " + code);
 		System.out.println("session : " + session);
 		System.out.println("state : " + state);
 
 		String accessToken = requestFacebookAccessToken(session, code);
-		System.out.println(accessToken);
+		JSONObject jsonObject = facebookUserDataLoadAndSave(accessToken, session);
+		System.out.println(jsonObject);
+		return jsonObject;
 	}
 
 	private String requestFacebookAccessToken(HttpSession session, String code) throws Exception {
@@ -51,7 +54,17 @@ public class FacebookController {
 		
 		JSONObject jsonObject = getJsonObject(facebookUrl);
 		String facebookAcccessToken = (String) jsonObject.get("access_token");
+		session.setAttribute("facebookAccessToken", facebookAcccessToken);
 		return facebookAcccessToken;
+	}
+	
+	private JSONObject facebookUserDataLoadAndSave(String accessToken, HttpSession session) throws Exception {
+		String facebookUrl = "https://graph.facebook.com/me?"+
+						"access_token="+accessToken+
+						"&fields=email,name,gender";
+		
+		JSONObject jsonObject = getJsonObject(facebookUrl);
+		return jsonObject;
 	}
 
 	private JSONObject getJsonObject(String url) throws Exception {
