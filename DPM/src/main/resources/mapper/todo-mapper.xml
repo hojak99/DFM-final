@@ -7,7 +7,7 @@
 	</select>
 	
 	<select id="getTodo" parameterType="com.dpm.app.todo.dto.TodoSearchDto" resultType="com.dpm.app.todo.dto.TodoDto">
-		SELECT * FROM todo WHERE id = #{user_id} AND create_date = #{date}
+		SELECT * FROM todo WHERE user_id = #{user_id} AND create_date BETWEEN #{create_date_start} AND #{create_date_end};
 	</select>
 	
 	<insert id="createTodo" parameterType="com.dpm.app.todo.dto.TodoDto">
