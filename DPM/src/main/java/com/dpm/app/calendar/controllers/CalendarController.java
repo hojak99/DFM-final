@@ -86,9 +86,8 @@ public class CalendarController {
 		}
 		
 		jsonObject.put("diary", jsonDiary);
+		jsonObject.put("todo", jsonTodo);
 		
-		
-		
-		return "HOME";
+		return jsonObject;
 	}
 }
